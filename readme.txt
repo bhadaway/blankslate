@@ -9,7 +9,8 @@ If you're creating your own theme/client project open up all files and do a
 
 BlankSlate WordPress Theme
 
-Demo: http://wp-themes.com/blankslate/ | Download: http://wordpress.org/themes/blankslate
+Demo: http://wp-themes.com/blankslate/
+Download: http://wordpress.org/themes/blankslate
 
 - - DESCRIPTION - -
 
@@ -31,9 +32,9 @@ In its unchanged/original state BlankSlate is...
 © 2011-2013 TidyThemes
 GNU General Public License | https://www.gnu.org/licenses/gpl.html
 
-...however, once you've significantly changed the theme to build your own unique project,
-either for yourself or for a client under a different name (as is encouraged) you're
-entirely welcome to copyright and license that project as you see fit.
+...however, once you've significantly changed the theme to build your own unique
+project, either for yourself or for a client under a different name (as is encouraged)
+you're entirely welcome to copyright and license that project as you see fit.
 
 - - SUPPORT - -
 
