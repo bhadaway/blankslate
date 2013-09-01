@@ -1,4 +1,4 @@
-IMPORTANT - PLEASE READ: tidythemes.com/concept
+IMPORTANT - PLEASE READ: http://tidythemes.com/concept/
 
 YOU MAY DELETE THIS FILE AND ANY OTHER FILE(S) BEFORE STARTING YOUR PROJECT
 
@@ -7,7 +7,9 @@ If you're creating your own theme/client project open up all files and do a
 
 - - THEME - -
 
-BlankSlate WordPress Theme | Demo: wp-themes.com/blankslate
+BlankSlate WordPress Theme
+
+Demo: http://wp-themes.com/blankslate/ | Download: http://wordpress.org/themes/blankslate
 
 - - DESCRIPTION - -
 
@@ -20,7 +22,7 @@ theme completely from scratch.
 One custom menu and one widgetized sidebar to get you started.
 
 If you'd like a jumpstart with a CSS framework and more custom menus, page templates
-and widgetized areas, checkout SuperSimple: tidythemes.com/supersimple
+and widgetized areas, checkout SuperSimple: http://tidythemes.com/supersimple/
 
 - - COPYRIGHT & LICENSE - -
 
@@ -35,6 +37,6 @@ entirely welcome to copyright and license that project as you see fit.
 
 - - SUPPORT - -
 
-tidythemes.com/forum
+http://tidythemes.com/forum/
 
-Enjoy. Thanks, TidyThemes | tidythemes.com
+Enjoy. Thanks, TidyThemes | http://tidythemes.com/
