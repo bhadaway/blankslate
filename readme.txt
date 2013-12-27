@@ -30,8 +30,7 @@ In its unchanged/original state, BlankSlate is...
 GNU General Public License | https://www.gnu.org/licenses/gpl.html
 
 ...however, once you've significantly changed the theme to build your own unique
-project, either for yourself or for a client under a different theme name (as is encouraged)
-you're entirely welcome to copyright and license that project as you see fit.
+project, either for yourself or for a client under a different theme name (as is encouraged) you're entirely welcome to copyright and license that project as you see fit.
 
 - - SUPPORT - -
 
