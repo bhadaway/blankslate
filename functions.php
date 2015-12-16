@@ -3,6 +3,7 @@ add_action( 'after_setup_theme', 'blankslate_setup' );
 function blankslate_setup()
 {
 load_theme_textdomain( 'blankslate', get_template_directory() . '/languages' );
+add_theme_support( 'title-tag' );
 add_theme_support( 'automatic-feed-links' );
 add_theme_support( 'post-thumbnails' );
 global $content_width;
