@@ -15,6 +15,7 @@ array( 'main-menu' => __( 'Main Menu', 'blankslate' ) )
 add_action( 'wp_enqueue_scripts', 'blankslate_load_scripts' );
 function blankslate_load_scripts()
 {
+wp_enqueue_style( 'style', get_stylesheet_uri() );
 wp_enqueue_script( 'jquery' );
 }
 add_action( 'comment_form_before', 'blankslate_enqueue_comment_reply_script' );
