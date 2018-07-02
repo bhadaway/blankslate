@@ -30,7 +30,7 @@ $ping_count = count( $comments_by_type['pings'] );
 <section id="trackbacks-list" class="comments">
 <h3 class="comments-title"><?php echo '<span class="ping-count">' . $ping_count . '</span> ' . ( $ping_count > 1 ? __( 'Trackbacks', 'barebones-mdl' ) : __( 'Trackback', 'barebones-mdl' ) ); ?></h3>
 <ul>
-<?php wp_list_comments( 'type=pings&callback=barebones-mdl_custom_pings' ); ?>
+<?php wp_list_comments( 'type=pings&callback=barebones_mdl_custom_pings' ); ?>
 </ul>
 </section>
 <?php 
