@@ -21,6 +21,20 @@
 			max-width: 900px;
 			width: 100%;
 		}
+		.thumbnail-card {
+			height: 300px;
+			background-size: cover;
+			padding: 24px;
+			display: flex;
+			align-items: flex-end;
+		}
+		.thumbnail-card a, .thumbnail-card h3 {
+			text-decoration: none;
+			font-weight: 500;
+			color: inherit;
+			font-size: 34px;
+			line-height: 40px;
+		}
 		.flexcolumn {
 			flex-direction: column;
 		}
