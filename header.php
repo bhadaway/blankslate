@@ -21,9 +21,11 @@
 			</section>
 			<div class="mdl-layout__header-row">
 				<div class="mdl-layout-spacer"></div>
-				<nav id="menu" role="navigation" class="mdl-navigation">
-					<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
-				</nav>
+				<?php wp_nav_menu( array(
+					'theme_location' => 'main-menu',
+					'walker' => new MDL_Walker(),
+					'items_wrap' => '<nav id="menu" role="navigation" class="mdl-navigation">%3$s</nav>'
+				 ) ); ?>
 			</div>
 		</header>
 		<div id="container">
