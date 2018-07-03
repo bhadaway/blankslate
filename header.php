@@ -11,6 +11,9 @@
 		.layout-waterfall .mdl-layout__header-row .mdl-navigation__link:last-of-type  {
 			padding-right: 0;
 		}
+		body {
+			background-color: #FAFAFA;
+		}
 	</style>
 	<?php wp_head(); ?>
 </head>
