@@ -21,6 +21,12 @@
 			max-width: 900px;
 			width: 100%;
 		}
+		.flexcolumn {
+			flex-direction: column;
+		}
+		.flexstart {
+			align-items: start;
+		}
 	</style>
 	<?php wp_head(); ?>
 </head>
