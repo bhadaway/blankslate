@@ -17,6 +17,10 @@
 		.mdl-card {
 			margin: 8px;
 		}
+		section.mdl-grid {
+			max-width: 900px;
+			width: 100%;
+		}
 	</style>
 	<?php wp_head(); ?>
 </head>
