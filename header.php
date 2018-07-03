@@ -14,6 +14,9 @@
 		body {
 			background-color: #FAFAFA;
 		}
+		.mdl-card {
+			margin: 8px;
+		}
 	</style>
 	<?php wp_head(); ?>
 </head>
