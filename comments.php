@@ -1,5 +1,5 @@
 <?php if ( 'comments.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) ) return; ?>
-<section id="comments">
+<section id="comments" class="mdl-color-text--primary-contrast mdl-card comments mdl-cell--12-col mdl-card mdl-shadow--4dp">
 	<?php
 	if ( have_comments() ) :
 	global $comments_by_type;
@@ -7,31 +7,20 @@
 	if ( ! empty( $comments_by_type['comment'] ) ) :
 	?>
 	<section id="comments-list" class="comments">
-		<h3 class="comments-title"><?php comments_number(); ?></h3>
 		<?php if ( get_comment_pages_count() > 1 ) : ?>
 		<nav id="comments-nav-above" class="comments-navigation" role="navigation">
 			<div class="paginated-comments-links"><?php paginate_comments_links(); ?></div>
 		</nav>
 		<?php endif; ?>
-		<ul>
-			<?php wp_list_comments( 'type=comment' ); ?>
-		</ul>
+		<?php wp_list_comments(array(
+			'type' => 'comment',
+			'walker' => new MDL_Comment_Walker ));
+		?>
 		<?php if ( get_comment_pages_count() > 1 ) : ?>
 		<nav id="comments-nav-below" class="comments-navigation" role="navigation">
 			<div class="paginated-comments-links"><?php paginate_comments_links(); ?></div>
 		</nav>
 		<?php endif; ?>
-	</section>
-	<?php
-	endif;
-	if ( ! empty( $comments_by_type['pings'] ) ) :
-	$ping_count = count( $comments_by_type['pings'] );
-	?>
-	<section id="trackbacks-list" class="comments">
-		<h3 class="comments-title"><?php echo '<span class="ping-count">' . $ping_count . '</span> ' . ( $ping_count > 1 ? __( 'Trackbacks', 'barebones-mdl' ) : __( 'Trackback', 'barebones-mdl' ) ); ?></h3>
-		<ul>
-			<?php wp_list_comments( 'type=pings&callback=barebones_mdl_custom_pings' ); ?>
-		</ul>
 	</section>
 	<?php
 	endif;

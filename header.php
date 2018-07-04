@@ -41,6 +41,39 @@
 		.flexstart {
 			align-items: start;
 		}
+		.comments {
+			background-color: #eee;
+			display: flex;
+			align-items: stretch;
+			flex-direction: column;
+		}
+		#comments {
+			margin-top: -8px;
+		}
+		.comment__header {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			margin-bottom: 16px;
+		}
+		.comment__author {
+			flex-grow: 1;
+			display: flex;
+			flex-direction: column;
+		}
+		.comment__avatar {
+			width: 48px;
+			height: 48px;
+			border-radius: 24px;
+			margin-right: 16px;
+		}
+		.comment__text {
+			line-height: 1.5em;
+		}
+		.comment__answers {
+			padding-top: 32px;
+			padding-left: 48px;
+		}
 	</style>
 	<?php wp_head(); ?>
 </head>
