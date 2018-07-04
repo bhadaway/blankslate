@@ -74,6 +74,34 @@
 			padding-top: 32px;
 			padding-left: 48px;
 		}
+		.comments form {
+			display: flex;
+			flex-direction: row;
+			margin-bottom: 16px;
+		}
+		.comments form button {
+			margin-top: 20px;
+			background-color: rgba(0, 0, 0, 0.24);
+			color: white;
+		}
+		.comment-form-comment {
+			flex-grow: 1;
+			margin-right: 16px;
+			color: rgb(97, 97, 97);
+		}
+		.visuallyhidden {
+			border: 0;
+			clip: rect(0 0 0 0);
+			height: 1px;
+			margin: -1px;
+			overflow: hidden;
+			padding: 0;
+			position: absolute;
+			width: 1px;
+		}
+		#respond {
+			padding-left: 16px;
+		}
 	</style>
 	<?php wp_head(); ?>
 </head>
