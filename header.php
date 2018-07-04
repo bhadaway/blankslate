@@ -102,6 +102,13 @@
 		#respond {
 			padding-left: 16px;
 		}
+		.post-contents {
+			border-top: 1px solid rgba(0,0,0,0.1);
+		}
+		.post-meta {
+			display: flex;
+			flex-direction: column;
+		}
 	</style>
 	<?php wp_head(); ?>
 </head>
