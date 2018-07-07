@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
-	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.deep_purple-cyan.min.css" />
+	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.deep_purple-blue.min.css" />
 	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 	<style>
 		.layout-waterfall .mdl-layout__header-row .mdl-navigation__link:last-of-type  {
@@ -105,9 +105,20 @@
 		.post-contents {
 			border-top: 1px solid rgba(0,0,0,0.1);
 		}
+		.post-contents img {
+			max-width: 100%;
+			height: auto;
+			margin-top: 16px;
+			margin-bottom: 16px;
+			display: block;
+		}
 		.post-meta {
 			display: flex;
 			flex-direction: column;
+		}
+		#site-title a {
+			text-decoration: none;
+			color: #fff;
 		}
 	</style>
 	<?php wp_head(); ?>
