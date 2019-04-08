@@ -1,8 +1,8 @@
 </div>
 <footer id="footer">
-<div id="copyright">
-&copy; <?php echo esc_html( date_i18n( __( 'Y', 'blankslate' ) ) ); ?> <?php echo esc_html( get_bloginfo( 'name' ) ); ?>
-</div>
+    <div id="copyright">
+        <?php echo '&copy; '.date('Y').' '.get_bloginfo('name').'. All rights reserved.'; ?>
+    </div>
 </footer>
 </div>
 <?php wp_footer(); ?>
