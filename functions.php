@@ -16,9 +16,11 @@ add_action('after_setup_theme', 'blankslate_setup');
 
 function blankslate_load_scripts() {
     
+    wp_enqueue_style('bootstrap', get_template_directory_uri().'/bootstrap/css/bootstrap.min.css');
     wp_enqueue_style('style', get_stylesheet_uri());
     
     wp_enqueue_script('jquery', '/wp-includes/js/jquery/jquery.js', null, null, true);
+    wp_enqueue_script('bootstrap', get_template_directory_uri().'/bootstrap/js/bootstrap.min.js', null, null, true);
     
 }
 add_action('wp_enqueue_scripts', 'blankslate_load_scripts');
