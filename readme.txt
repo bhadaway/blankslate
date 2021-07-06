@@ -3,8 +3,8 @@
 Contributors: tidythemes, bhadaway
 Theme link: https://github.com/tidythemes/blankslate
 Tags: one-column, two-columns, custom-menu, featured-images, microformats, sticky-post, threaded-comments, translation-ready
-Requires at least: 5.1
-Tested up to: 5.1
+Requires at least: 5.0
+Tested up to: 5.7
 Stable tag: trunk
 License: GNU General Public License v3 or Later
 License URI: https://www.gnu.org/licenses/gpl.html
@@ -25,7 +25,7 @@ If you're creating your own theme or client project, open up all files and do a 
 
 In its unchanged and original state:
 
-BlankSlate WordPress Theme © 2011-2019 TidyThemes
+BlankSlate WordPress Theme © 2011-2021 TidyThemes
 BlankSlate is distributed under the terms of the GNU GPL
 
 The BlankSlate theme package and all files contained within are distributed under the terms of the GNU GPL v3 or Later (https://www.gnu.org/licenses/gpl.html).

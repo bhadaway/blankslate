@@ -10,6 +10,18 @@ global $content_width;
 if ( ! isset( $content_width ) ) { $content_width = 1920; }
 register_nav_menus( array( 'main-menu' => esc_html__( 'Main Menu', 'blankslate' ) ) );
 }
+add_action( 'admin_notices', 'blankslate_admin_notice' );
+function blankslate_admin_notice() {
+$user_id = get_current_user_id();
+if ( !get_user_meta( $user_id, 'blankslate_notice_dismissed_1' ) && current_user_can( 'manage_options' ) )
+echo '<div class="notice notice-info"><p>' . __( '<big><strong>BlankSlate Users</strong>:</big> <a href="?notice-dismiss" class="alignright">Dismiss</a> <a href="https://wordpress.org/support/topic/important-announcement-3/" class="button-primary" target="_blank">Important Announcement!</a> <a href="https://calmestghost.com/donate" class="button-primary" target="_blank">Make a Donation</a>', 'blankslate' ) . '</p></div>';
+}
+add_action( 'admin_init', 'blankslate_notice_dismissed' );
+function blankslate_notice_dismissed() {
+$user_id = get_current_user_id();
+if ( isset( $_GET['notice-dismiss'] ) )
+add_user_meta( $user_id, 'blankslate_notice_dismissed_1', 'true', true );
+}
 add_action( 'wp_enqueue_scripts', 'blankslate_load_scripts' );
 function blankslate_load_scripts() {
 wp_enqueue_style( 'blankslate-style', get_stylesheet_uri() );
