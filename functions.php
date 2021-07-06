@@ -56,6 +56,15 @@ $("html").addClass("opera");
 </script>
 <?php
 }
+if ( !function_exists( 'blankslate_wp_body_open' ) ) {
+function blankslate_wp_body_open() {
+do_action( 'wp_body_open' );
+}
+}
+add_action( 'wp_body_open', 'blankslate_skip_link', 5 );
+function blankslate_skip_link() {
+echo '<a href="#content" class="skip-link screen-reader-text">' . esc_html__( 'Skip to the content', 'blankslate' ) . '</a>';
+}
 add_filter( 'document_title_separator', 'blankslate_document_title_separator' );
 function blankslate_document_title_separator( $sep ) {
 $sep = '|';
