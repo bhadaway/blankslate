@@ -11,6 +11,18 @@ global $content_width;
 if ( !isset( $content_width ) ) { $content_width = 1920; }
 register_nav_menus( array( 'main-menu' => esc_html__( 'Main Menu', 'blankslate' ) ) );
 }
+add_action( 'admin_notices', 'blankslate_admin_notice' );
+function blankslate_admin_notice() {
+$user_id = get_current_user_id();
+if ( !get_user_meta( $user_id, 'blankslate_notice_dismissed_3' ) && current_user_can( 'manage_options' ) )
+echo '<div class="notice notice-info"><p>' . __( '<big><strong>BlankSlate</strong>:</big> Help keep the project alive! <a href="?notice-dismiss" class="alignright">Dismiss</a> <a href="https://calmestghost.com/donate" class="button-primary" target="_blank">Make a Donation</a>', 'blankslate' ) . '</p></div>';
+}
+add_action( 'admin_init', 'blankslate_notice_dismissed' );
+function blankslate_notice_dismissed() {
+$user_id = get_current_user_id();
+if ( isset( $_GET['notice-dismiss'] ) )
+add_user_meta( $user_id, 'blankslate_notice_dismissed_3', 'true', true );
+}
 add_action( 'wp_enqueue_scripts', 'blankslate_enqueue' );
 function blankslate_enqueue() {
 wp_enqueue_style( 'blankslate-style', get_stylesheet_uri() );
