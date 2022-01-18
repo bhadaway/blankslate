@@ -26,7 +26,7 @@ If you're creating your own theme or client project, open up all files and do a 
 
 In its unchanged and original state:
 
-BlankSlate WordPress Theme © 2011-2021 TidyThemes
+BlankSlate WordPress Theme © 2011-2022 TidyThemes
 BlankSlate is distributed under the terms of the GNU GPL
 
 The BlankSlate theme package and all files contained within are distributed under the terms of the GNU GPL v3 or Later (https://www.gnu.org/licenses/gpl.html).
