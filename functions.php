@@ -6,7 +6,7 @@ add_theme_support( 'title-tag' );
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'responsive-embeds' );
 add_theme_support( 'automatic-feed-links' );
-add_theme_support( 'html5', array( 'search-form' ) );
+add_theme_support( 'html5', array( 'search-form', 'navigation-widgets' ) );
 add_theme_support( 'woocommerce' );
 global $content_width;
 if ( !isset( $content_width ) ) { $content_width = 1920; }
@@ -15,14 +15,14 @@ register_nav_menus( array( 'main-menu' => esc_html__( 'Main Menu', 'blankslate' 
 add_action( 'admin_notices', 'blankslate_admin_notice' );
 function blankslate_admin_notice() {
 $user_id = get_current_user_id();
-if ( !get_user_meta( $user_id, 'blankslate_notice_dismissed_4' ) && current_user_can( 'manage_options' ) )
+if ( !get_user_meta( $user_id, 'blankslate_notice_dismissed_5' ) && current_user_can( 'manage_options' ) )
 echo '<div class="notice notice-info"><p>' . __( '<big><strong>BlankSlate</strong>:</big> Help keep the project alive! <a href="?notice-dismiss" class="alignright">Dismiss</a> <a href="https://calmestghost.com/donate" class="button-primary" target="_blank">Make a Donation</a>', 'blankslate' ) . '</p></div>';
 }
 add_action( 'admin_init', 'blankslate_notice_dismissed' );
 function blankslate_notice_dismissed() {
 $user_id = get_current_user_id();
 if ( isset( $_GET['notice-dismiss'] ) )
-add_user_meta( $user_id, 'blankslate_notice_dismissed_4', 'true', true );
+add_user_meta( $user_id, 'blankslate_notice_dismissed_5', 'true', true );
 }
 add_action( 'wp_enqueue_scripts', 'blankslate_enqueue' );
 function blankslate_enqueue() {
@@ -37,6 +37,11 @@ jQuery(document).ready(function($) {
 var deviceAgent = navigator.userAgent.toLowerCase();
 if (deviceAgent.match(/(iphone|ipod|ipad)/)) {
 $("html").addClass("ios");
+$("html").addClass("mobile");
+}
+if (deviceAgent.match(/(Android)/)) {
+$("html").addClass("android");
+$("html").addClass("mobile");
 }
 if (navigator.userAgent.search("MSIE") >= 0) {
 $("html").addClass("ie");
@@ -69,6 +74,19 @@ return '...';
 } else {
 return $title;
 }
+}
+function blankslate_schema_type() {
+$schema = 'https://schema.org/';
+if ( is_single() ) {
+$type = "Article";
+} elseif ( is_author() ) {
+$type = 'ProfilePage';
+} elseif ( is_search() ) {
+$type = 'SearchResultsPage';
+} else {
+$type = 'WebPage';
+}
+echo 'itemscope itemtype="' . $schema . $type . '"';
 }
 add_filter( 'nav_menu_link_attributes', 'blankslate_schema_url', 10 );
 function blankslate_schema_url( $atts ) {
