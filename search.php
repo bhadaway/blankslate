@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-<main id="content" role="main">
 <?php if ( have_posts() ) : ?>
 <header class="header">
 <h1 class="entry-title" itemprop="name"><?php printf( esc_html__( 'Search Results for: %s', 'blankslate' ), get_search_query() ); ?></h1>
@@ -19,5 +18,4 @@
 </div>
 </article>
 <?php endif; ?>
-</main>
 <?php get_footer(); ?>

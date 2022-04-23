@@ -25,3 +25,4 @@ if ( is_front_page() || is_home() || is_front_page() && is_home() ) { echo '</h1
 </nav>
 </header>
 <div id="container">
+<main id="content" role="main">

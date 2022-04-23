@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-<main id="content" role="main">
 <header class="header">
 <?php the_post(); ?>
 <h1 class="entry-title author" itemprop="name"><?php the_author_link(); ?></h1>
@@ -10,5 +9,4 @@
 <?php get_template_part( 'entry' ); ?>
 <?php endwhile; ?>
 <?php get_template_part( 'nav', 'below' ); ?>
-</main>
 <?php get_footer(); ?>

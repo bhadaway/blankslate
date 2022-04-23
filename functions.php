@@ -12,17 +12,19 @@ global $content_width;
 if ( !isset( $content_width ) ) { $content_width = 1920; }
 register_nav_menus( array( 'main-menu' => esc_html__( 'Main Menu', 'blankslate' ) ) );
 }
-add_action( 'admin_notices', 'blankslate_admin_notice' );
-function blankslate_admin_notice() {
+add_action( 'admin_notices', 'blankslate_notice' );
+function blankslate_notice() {
 $user_id = get_current_user_id();
-if ( !get_user_meta( $user_id, 'blankslate_notice_dismissed_5' ) && current_user_can( 'manage_options' ) )
-echo '<div class="notice notice-info"><p>' . __( '<big><strong>BlankSlate</strong>:</big> Help keep the project alive! <a href="?notice-dismiss" class="alignright">Dismiss</a> <a href="https://calmestghost.com/donate" class="button-primary" target="_blank">Make a Donation</a>', 'blankslate' ) . '</p></div>';
+$admin_url = ( isset( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http' ) . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+$param = ( count( $_GET ) ) ? '&' : '?';
+if ( !get_user_meta( $user_id, 'blankslate_notice_dismissed_7' ) && current_user_can( 'manage_options' ) )
+echo '<div class="notice notice-info"><p><a href="' . esc_url( $admin_url ), esc_html( $param ) . 'dismiss" class="alignright" style="text-decoration:none"><big>' . esc_html__( 'Ⓧ', 'blankslate' ) . '</big></a>' . wp_kses_post( __( '<big><strong>📝 Thank you for using BlankSlate!</strong></big>', 'blankslate' ) ) . '<br /><br /><a href="https://wordpress.org/support/theme/blankslate/reviews/#new-post" class="button-primary" target="_blank">' . esc_html__( 'Review', 'blankslate' ) . '</a> <a href="https://github.com/tidythemes/blankslate/issues" class="button-primary" target="_blank">' . esc_html__( 'Feature Requests & Support', 'blankslate' ) . '</a> <a href="https://calmestghost.com/donate" class="button-primary" target="_blank">' . esc_html__( 'Donate', 'blankslate' ) . '</a></p></div>';
 }
 add_action( 'admin_init', 'blankslate_notice_dismissed' );
 function blankslate_notice_dismissed() {
 $user_id = get_current_user_id();
-if ( isset( $_GET['notice-dismiss'] ) )
-add_user_meta( $user_id, 'blankslate_notice_dismissed_5', 'true', true );
+if ( isset( $_GET['dismiss'] ) )
+add_user_meta( $user_id, 'blankslate_notice_dismissed_7', 'true', true );
 }
 add_action( 'wp_enqueue_scripts', 'blankslate_enqueue' );
 function blankslate_enqueue() {
@@ -64,15 +66,15 @@ $("html").addClass("opera");
 }
 add_filter( 'document_title_separator', 'blankslate_document_title_separator' );
 function blankslate_document_title_separator( $sep ) {
-$sep = '|';
+$sep = esc_html( '|' );
 return $sep;
 }
 add_filter( 'the_title', 'blankslate_title' );
 function blankslate_title( $title ) {
 if ( $title == '' ) {
-return '...';
+return esc_html( '...' );
 } else {
-return $title;
+return esc_attr( $title );
 }
 }
 function blankslate_schema_type() {
@@ -86,7 +88,7 @@ $type = 'SearchResultsPage';
 } else {
 $type = 'WebPage';
 }
-echo 'itemscope itemtype="' . $schema . $type . '"';
+echo 'itemscope itemtype="' . esc_url( $schema ) . esc_attr( $type ) . '"';
 }
 add_filter( 'nav_menu_link_attributes', 'blankslate_schema_url', 10 );
 function blankslate_schema_url( $atts ) {
