@@ -74,7 +74,7 @@ function blankslate_title( $title ) {
 if ( $title == '' ) {
 return esc_html( '...' );
 } else {
-return esc_attr( $title );
+return wp_kses_post( $title );
 }
 }
 function blankslate_schema_type() {
