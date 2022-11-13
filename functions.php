@@ -1,4 +1,20 @@
 <?php
+
+// add Company Options Page
+
+if( function_exists('acf_add_options_page') ) {
+    acf_add_options_page(array(
+        'page_title'    => 'Business Info',
+        'menu_title'    => 'Business Info',
+        'menu_slug'     => 'business-info',
+        'parent_slug'   => '',
+        'capability'    => 'edit_posts',
+        'redirect'      => false
+    ));
+    
+}
+
+
 add_action( 'after_setup_theme', 'blankslate_setup' );
 function blankslate_setup() {
 load_theme_textdomain( 'blankslate', get_template_directory() . '/languages' );
@@ -164,3 +180,5 @@ return count( $comments_by_type['comment'] );
 return $count;
 }
 }
+
+
