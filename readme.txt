@@ -1,11 +1,11 @@
 === BlankSlate ===
 
-Contributors: tidythemes, bhadaway
-Donate link: https://calmestghost.com/donate
-Theme link: https://github.com/tidythemes/blankslate
+Contributors: bhadaway, tidythemes
+Donate link: https://opencollective.com/blankslate
+Theme link: https://opencollective.com/blankslate
 Tags: accessibility-ready, one-column, two-columns, custom-menu, featured-images, microformats, sticky-post, threaded-comments, translation-ready
 Requires at least: 5.2
-Tested up to: 6.1
+Tested up to: 6.5
 Stable tag: trunk
 License: GNU General Public License v3 or Later
 License URI: https://www.gnu.org/licenses/gpl.html
@@ -22,7 +22,7 @@ If you're creating your own theme or client project, open up all files and do a 
 
 In its unchanged and original state:
 
-BlankSlate WordPress Theme © 2011-2023 TidyThemes
+BlankSlate WordPress Theme © 2011-2024 TidyThemes
 BlankSlate is distributed under the terms of the GNU GPL
 
 The BlankSlate theme package and all files contained within are distributed under the terms of the GNU GPL v3 or Later (https://www.gnu.org/licenses/gpl.html).
