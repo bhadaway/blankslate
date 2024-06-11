@@ -7,6 +7,7 @@ add_theme_support( 'post-thumbnails' );
 add_theme_support( 'responsive-embeds' );
 add_theme_support( 'automatic-feed-links' );
 add_theme_support( 'html5', array( 'search-form', 'navigation-widgets' ) );
+add_theme_support( 'appearance-tools' );
 add_theme_support( 'woocommerce' );
 global $content_width;
 if ( !isset( $content_width ) ) { $content_width = 1920; }
@@ -17,14 +18,14 @@ function blankslate_notice() {
 $user_id = get_current_user_id();
 $admin_url = ( isset( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http' ) . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 $param = ( count( $_GET ) ) ? '&' : '?';
-if ( !get_user_meta( $user_id, 'blankslate_notice_dismissed_10' ) && current_user_can( 'manage_options' ) )
+if ( !get_user_meta( $user_id, 'blankslate_notice_dismissed_11' ) && current_user_can( 'manage_options' ) )
 echo '<div class="notice notice-info"><p><a href="' . esc_url( $admin_url ), esc_html( $param ) . 'dismiss" class="alignright" style="text-decoration:none"><big>' . esc_html__( 'Ⓧ', 'blankslate' ) . '</big></a>' . wp_kses_post( __( '<big><strong>🏆 Thank you for using BlankSlate!</strong></big>', 'blankslate' ) ) . '<p>' . esc_html__( 'Powering over 10k websites! Buy me a sandwich! 🥪', 'blankslate' ) . '</p><a href="https://github.com/bhadaway/blankslate/issues/57" class="button-primary" target="_blank"><strong>' . esc_html__( 'How do you use BlankSlate?', 'blankslate' ) . '</strong></a> <a href="https://opencollective.com/blankslate" class="button-primary" style="background-color:green;border-color:green" target="_blank"><strong>' . esc_html__( 'Donate', 'blankslate' ) . '</strong></a> <a href="https://wordpress.org/support/theme/blankslate/reviews/#new-post" class="button-primary" style="background-color:purple;border-color:purple" target="_blank"><strong>' . esc_html__( 'Review', 'blankslate' ) . '</strong></a> <a href="https://github.com/bhadaway/blankslate/issues" class="button-primary" style="background-color:orange;border-color:orange" target="_blank"><strong>' . esc_html__( 'Support', 'blankslate' ) . '</strong></a></p></div>';
 }
 add_action( 'admin_init', 'blankslate_notice_dismissed' );
 function blankslate_notice_dismissed() {
 $user_id = get_current_user_id();
 if ( isset( $_GET['dismiss'] ) )
-add_user_meta( $user_id, 'blankslate_notice_dismissed_10', 'true', true );
+add_user_meta( $user_id, 'blankslate_notice_dismissed_11', 'true', true );
 }
 add_action( 'wp_enqueue_scripts', 'blankslate_enqueue' );
 function blankslate_enqueue() {
